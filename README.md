@@ -1,2 +1,8 @@
-# Spring-Thymeleaf-mvc
-Employee management MVC application that uses Spring Boot, Spring Security, Thymeleaf, mySQL.
+# MVC CRUD application for employee management.
+
+Used technologies:
+- Spring boot
+- Spring security
+- mySQL
+- Hibernate
+- Thymeleaf

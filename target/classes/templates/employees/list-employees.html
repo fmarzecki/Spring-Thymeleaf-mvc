@@ -18,11 +18,15 @@
 
 	<h3>Employee Directory</h3>
 	<hr>
-
-	<a th:href="@{/employees/showFormForAdd}" 
-		class="btn btn-primary btn-sm mb-3"> 
-		Add Employee 
-	</a>
+	<div class="d-flex justify-content-between">
+		<a th:href="@{/employees/showFormForAdd}" 
+			class="btn btn-primary mb-3"> 
+			Add Employee 
+		</a>
+		<form action="#" th:action="@{/logout}" method="POST">
+			<input class="btn btn-danger mb-3" type="submit" value="Logout" />
+		</form>
+	</div>
 	<table class="table table-bordered table-striped">
 		<thead class="table-dark">
 			<tr>
@@ -40,14 +44,16 @@
 				<td th:text="${tempEmployee.lastName}" />	
 				<td th:text="${tempEmployee.email}" />	
 				<td> 
-					<a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}" 
-						class="btn btn-primary btn-sm ml-3"> 
-						Update 
-					<a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}" 
-						class="btn btn-danger btn-sm"
-						onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false"> 
-						Delete
-					</a>
+					<div class="d-flex justify-content-between">
+						<a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}" 
+							class="btn btn-primary btn-sm ml-3"> 
+							Update 
+						<a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}" 
+							class="btn btn-danger btn-sm"
+							onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false"> 
+							Delete
+						</a>
+					</div>
 				</td>	
 				
 			</tr>

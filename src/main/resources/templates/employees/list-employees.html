@@ -17,12 +17,12 @@
 
 <div class="container">
 	<hr>
-		<p>
-			User: <span sec:authentication="principal.username"></span>
-			<br><br>
+		<a th:href="@{/}" 
+			class="btn btn-info">
+			Home Page
+		</a>
 
-			Role(s): <span sec:authentication="principal.authorities"></span>
-		</p>
+
 	<hr>
 	<h3>Employee Directory</h3>
 	<hr>

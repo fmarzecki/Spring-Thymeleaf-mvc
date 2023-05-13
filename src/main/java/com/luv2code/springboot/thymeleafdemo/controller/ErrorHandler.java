@@ -10,7 +10,7 @@ public class ErrorHandler implements org.springframework.boot.web.servlet.error.
     @RequestMapping("/error")
     public String handleError() {
         // Redirect to the employees list page
-        return "redirect:/employees/list";
+        return "redirect:/";
     }
 
 }

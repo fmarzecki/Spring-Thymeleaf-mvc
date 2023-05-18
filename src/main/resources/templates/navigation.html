@@ -17,16 +17,21 @@
 		</p>
 	<hr>
 
-	<p>
-		<a th:href="@{/employees/list}" class="btn btn-primary"> Employee List (MANAGER) </a>
-		<form action="#" th:action="@{/logout}" method="POST">
-			<input class="btn btn-danger mb-3" type="submit" value="Logout" />
-		</form>
-	</p>
+	<div sec:authorize="hasRole('MANAGER')">
+		<p>
+			<a th:href="@{/employees/list}" class="btn btn-primary"> Employee List (MANAGER) </a>
+		</p>
+	</div>
 
-	
+	<form action="#" th:action="@{/logout}" method="POST">
+		<input class="btn btn-danger mb-3" type="submit" value="Logout" />
+	</form>
+
+	<div sec:authorize="authentication.authorities.contains('EMPLOYEE')">
+		<p>You see this, if you are employed</p>
+	</div>
+
 </body>
-
 </html>
 
 
